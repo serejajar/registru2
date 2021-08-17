@@ -12,7 +12,7 @@ function getExam(days = 7) {
 
     const examDays = document.querySelectorAll('td.picker-cell[title="Disponibil"]');
 
-    if (!examDays) {
+    if (!examDays.length) {
       return;
     }
 
