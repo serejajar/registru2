@@ -25,9 +25,10 @@ function getExam(days = 7) {
     if (period < checkPeriod) {
       const audio = document.createElement('audio');
       audio.setAttribute('src', 'https://www.w3schools.com/tags/horse.mp3');
+      audio.setAttribute('loop', true);
       audio.play();
 
-      body.appendChild(tag);
+      document.body.appendChild(audio);
 
       console.log('Найден свободный день!');
     }
