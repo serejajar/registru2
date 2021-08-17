@@ -11,6 +11,11 @@ function getExam(days = 7) {
     await btn.click();
 
     const examDays = document.querySelectorAll('td.picker-cell[title="Disponibil"]');
+
+    if (!examDays) {
+      return;
+    }
+
     const firstAvailableDay = examDays[0];
 
     const day = firstAvailableDay.innerText;
