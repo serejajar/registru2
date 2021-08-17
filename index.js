@@ -17,14 +17,10 @@ function getExam(days = 7) {
     const month = +firstAvailableDay.getAttribute('data-month');
     const year = firstAvailableDay.getAttribute('data-year');
 
-    console.log(year, month, day, new Date(year, month, day));
-
     const nextDate = new Date(year, month, day);
 
     const period = nextDate.getTime() - currTimeMs;
     const checkPeriod = (1000 * 60 * 60 * 24) * days;
-
-    console.log(period, checkPeriod);
 
     if (period < checkPeriod) {
       const audio = document.createElement('audio');
