@@ -1,3 +1,5 @@
+// 2005042007349
+// 048039
 let intervalId;
 
 function getExam() {
