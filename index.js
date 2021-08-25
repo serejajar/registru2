@@ -1,6 +1,6 @@
 let intervalId;
 
-function getExam(days = 7) {
+function getExam() {
   intervalId && clearInterval(intervalId);
 
   const currTimeMs = Date.now();
@@ -12,22 +12,7 @@ function getExam(days = 7) {
 
     const examDays = document.querySelectorAll('td.picker-cell[title="Disponibil"]');
 
-    if (!examDays.length) {
-      return;
-    }
-
-    const firstAvailableDay = examDays[0];
-
-    const day = firstAvailableDay.innerText;
-    const month = +firstAvailableDay.getAttribute('data-month');
-    const year = firstAvailableDay.getAttribute('data-year');
-
-    const nextDate = new Date(year, month, day);
-
-    const period = nextDate.getTime() - currTimeMs;
-    const checkPeriod = (1000 * 60 * 60 * 24) * days;
-
-    if (period < checkPeriod) {
+    if (examDays.length) {
       const audio = document.createElement('audio');
       audio.setAttribute('src', 'https://www.w3schools.com/tags/horse.mp3');
       audio.setAttribute('loop', true);
